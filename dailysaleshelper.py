@@ -229,7 +229,7 @@ if round == 'true' : #Percentages are calculated again using rounded values as o
 	rperclaye = Decimal((100/dlaye*rcumu)).quantize(Decimal("0"))
 	print "Accurate Daily Sales Information for e-mail:"
 if repeat == 0 :
-	print "Total for %s is *%s*" %(yesterdayt, total) #I added asterisks around figures to make them clearer. Feel free to remove them :P
+	print "Total for %s is *%s*" %(yesterdayt, total) #I added asterisks around figures to make them more prominant. Feel free to remove them :P
 print "Cumulative totals for %s are *%s*" %(theweek, cumu)
 if round == 'false' : #Remaining target/last year is only calculated for hard-copy
 	if targ > cumu : #Wording changes once target is reached
@@ -240,15 +240,16 @@ if round == 'false' : #Remaining target/last year is only calculated for hard-co
 		print "You are *%s* off achieiving last year's total for the week" %(remlaye)
 	else :
 		print "Last year's total for the week has been exceeded by %s" %(abs(remlaye))
-if summary == 0 :
-	print "You have achieved *%s* percent of your target for the week" %(perctarg)
-	print "You have achieved *%s* percent of last year's total for the week" %(perclaye)
+print "You have achieved *%s* percent of your target for the week" %(perctarg)
+print "You have achieved *%s* percent of last year's total for the week" %(perclaye)
 
 if round == 'true' :
 	print "" #Give it a bit of space...
 	print ""
 	print "Rounded-off Information for Hard-copy:" #My manager doesn't like to have the pennies on our hard copy
 	if repeat == 0 :
+		print "Rounded 1506 total:"+str(rt1506t)
+		print "Rounded 1812 total:"+str(rt1812t)
 		print "Total for %s is *%s*" %(yesterdayt, rtotal)
 	print "Cumulative totals for %s are *%s*" %(theweek, rcumu)
 	if targ > cumu :
@@ -257,7 +258,6 @@ if round == 'true' :
 	else :
 		print "The target has been exceeded by *%s*" %(abs(remtarg))
 		print "Last year's total for the week has been exceeded by *%s*" %(abs(remlaye))
-	if summary == 0 :
 		print "You have achieved *%s* percent of your target for the week" %(rperctarg)
 		print "You have achieved *%s* percent of last year's total for the week" %(rperclaye)
 	
